@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Config version="2.1">
+  <ApiHost>XapiX.eye.fi</ApiHost>
+  <ShowThumbnailPreview>true</ShowThumbnailPreview>
+  <MIB>
+    <ReceivedCounter>0</ReceivedCounter>
+  </MIB>
+  <RecentVideoFolder>C:\Users\Anwender\Videos\Eye-Fi Videos</RecentVideoFolder>
+  <RecentPhotoFolder>C:\Users\Anwender\Pictures\Eye-Fi Fotos\2015-10-22</RecentPhotoFolder>
+  <RecentWifi>7b0cfd83-38ea-4fd0-b79b-69d6b8379d3f</RecentWifi>
+  <Cards>
+    <Card MacAddress="00-18-56-6e-7b-50">
+      <UploadKey>ff8708e0be5ba0347b5e3ff4db144d96</UploadKey>
+      <Entropy>659051</Entropy>
+      <DownsyncKey />
+      <TransferMode>546</TransferMode>
+      <TransferModeTimestamp>0</TransferModeTimestamp>
+      <ConfigInfo KeyInfo="KD768CKHUF" SSIDName="Eye-Fi Card 6e7b50" CustomName="Eye-Fi Card 6e7b50" />
+      <IsAutoConnected>true</IsAutoConnected>
+      <IsRecordActivation>true</IsRecordActivation>
+      <IsCloudBinding>false</IsCloudBinding>
+      <IsMobiPro>true</IsMobiPro>
+      <IsRAWEnable>false</IsRAWEnable>
+      <TimeOutOption>0</TimeOutOption>
+      <MediaTypes>
+        <Media Type="1">
+          <Folder>C:\Users\Anwender\Pictures\Eye-Fi Fotos</Folder>
+          <AddDate>1</AddDate>
+          <DateType>1</DateType>
+          <CustomDateFormat />
+        </Media>
+        <Media Type="2">
+          <Folder>C:\Users\Anwender\Videos\Eye-Fi Videos</Folder>
+          <AddDate>1</AddDate>
+          <DateType>1</DateType>
+          <CustomDateFormat />
+        </Media>
+        <Media Type="3">
+          <Folder>C:\Users\Anwender\Pictures\Eye-Fi RAW</Folder>
+          <AddDate>1</AddDate>
+          <DateType>1</DateType>
+          <CustomDateFormat />
+        </Media>
+      </MediaTypes>
+    </Card>
+  </Cards>
+  <WatchFolderItems />
+</Config>

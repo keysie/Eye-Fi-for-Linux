@@ -1,0 +1,6 @@
+ctrl_interface=/var/run/wpa_supplicant
+network={
+	ssid="Eye-Fi Card 6e7b50"
+	#psk="KD768CKHUF"
+	psk=813c2651927bf538771ec3f381eb61627647b1ff5326ed513a9fe174f7c6cec5
+}
