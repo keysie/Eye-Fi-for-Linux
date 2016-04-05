@@ -4,4 +4,7 @@ Thus, use the following steps:
 1. Set up AP
 2. Start Server
 3. Enjoy
-4. Change permissions on folders
+
+DeepSkyStacker seems not to be working too well on Wine, therefore
+a new way to monitor new images as they appear in the chosen folder
+is in development.

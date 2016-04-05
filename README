@@ -16,6 +16,7 @@ computer, not be connected wirelessly.
 EyeFi-Server:
 **************
 
+(This part of the package is not developed or maintained by me)
 This is the server application used to intercept the data sent
 by the card. To install, use the install.sh script. It will ask
 for Settings.xml and a path where to store the fotos, as well as
@@ -33,6 +34,9 @@ during installation.
 If your card does not have the capability to host its own wifi, use
 the script and config file in the folder 'Local-AP'. You may have to
 tweak some things depending on your OS and hardware.
+
+!NOTE! This seems not to be working at the moment. Host a wlan for
+the card to log into, then the server works fine.
 
 After a successful installation the server will start in verbose mode
 in the console.
@@ -60,5 +64,9 @@ If you install DeepSkyStacker in wine using the standard location,
 you can use the Start-DSS-Live.sh script to start DeepSkyStackerLive
 without having to cd to the file's location every time.
 
-
+NOTE: It seems that DSS is not working well with wine, therefore
+I am currently testing different other possibilities to achieve
+this functionality. Right now it looks like the best solution
+would be to have a windows virtual machine run concurrently with
+everything else and have DSS-Live run inside the VM.
 
