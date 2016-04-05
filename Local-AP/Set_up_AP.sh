@@ -1,4 +1,4 @@
-#!bin/bash
+#!/bin/bash
 
 # Automatic WLAN-Access-Point setup script
 # Copyright by Keysie, October 2015

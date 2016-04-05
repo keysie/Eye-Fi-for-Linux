@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 SRCPATH=./eyefiserver
 DSTPATH=/usr/local/eyefiserver
@@ -37,7 +37,7 @@ read SETTFILE
 # Check if only [ENTER] has been pressed and if yes,
 # use ./Settings.xml
 
-if [ ${SETTFILE}=="\n" ]
+if ! [ -n "${SETTFILE}" ]
 then
 	SETTFILE="./Settings.xml"
 fi
@@ -58,6 +58,10 @@ fi
 
 # Automatically parse the file to find uploadkey,
 # ESSID and WPA2-password
+
+# TODO: Add code to distinguish between different card types
+# and consequently code to hanlde those cases. Currently
+# this has only been tested with EyeFi Pro 32GB
 
 uploadkey="$(cat ${SETTFILE} | grep -P -o '(?<=(<UploadKey>))[0-9a-z]*(?=(</UploadKey>))')"
 essid="$(cat Settings.xml | grep -P -o '(?<=(SSIDName=")).*(?=(" CustomName=))')"
@@ -114,10 +118,10 @@ echo "/volume1/<shared folder>/%%Y-%%m-%%d"
 echo
 
 echo "(Press [ENTER] for '/home/${user}/Pictures/Eye-Fi/%%Y-%%m-%%d'):"
-read uploaddir
+read -e uploaddir
 echo
 
-if [ ${uploaddir}=="\n" ]
+if ! [ -n "${uploaddir}" ]
 then
 	uploaddir="/home/${user}/Pictures/Eye-Fi/%%Y-%%m-%%d"
 else
@@ -126,12 +130,17 @@ else
 fi
 
 
+# Save username to file
+
+echo -n "${user}" > ${SRCPATH}/etc/default.user
+
+
 #parse eyefiserver.tmpl and write to eyefiserver.conf
 
 rm "${SRCPATH}/etc/eyefiserver.conf" > /dev/null 2>&1
 while read line
 do
-    eval echo "$line" >> "${SRCPATH}/etc/eyefiserver.conf"
+    eval echo "${line}" >> "${SRCPATH}/etc/eyefiserver.conf"
 done < "${SRCPATH}/etc/eyefiserver.tmpl"
 
 

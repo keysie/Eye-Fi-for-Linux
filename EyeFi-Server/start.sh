@@ -49,7 +49,7 @@ start_verbose()
 {
 	trap int_trap INT # <-- TRAP for Ctrl+C
 	echo "Starting Eye-Fi Server verbosely"
-	${PYTHONPATH}/python ${DSTPATH}/bin/eyefiserver.py ${DSTPATH}/etc/eyefiserver.conf ${DSTPATH}/var/eyefiserver.log
+	su ${user} -c "${PYTHONPATH}/python ${DSTPATH}/bin/eyefiserver.py ${DSTPATH}/etc/eyefiserver.conf ${DSTPATH}/var/eyefiserver.log"
 }
 
 
@@ -94,6 +94,16 @@ done
 echo 
 
 
+# End of privileged part. Drop superuser privileges.
+
+read user < ${DSTPATH}/etc/default.user
+if ! [ -n "${user}" ]; then
+	echo
+	echo "default user not found. aborting."
+	echo
+	exit 1
+fi
+
 # Determine whether to start server verbosely on foreground
 # or as a daemon. If argument -v is provided, script does 
 # not ask. If not, user is asked what to do.
@@ -113,7 +123,7 @@ else
 		start_verbose
 	else
 		echo "Starting Eye-Fi Server in background"
-		${RCDPATH}/S99EyeFiServer.sh start
+		su ${user} -c "${RCDPATH}/S99EyeFiServer.sh start"
 	fi
 fi
 

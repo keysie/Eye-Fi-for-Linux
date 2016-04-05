@@ -1,5 +1,14 @@
 #!/bin/bash
 
+## Currently eyefi-server is not working when connected to
+## the wlan the card is hosting by itself. Have to figure
+## this out sometime. Until then, this script is pointless.
+## Therefore, prevent it from running.
+
+## REMOVE BEFORE USE
+echo "Script temporarily disabled!"
+exit 1
+
 
 # Some variables for pretty output
 
