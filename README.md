@@ -1,5 +1,7 @@
 # Ubuntu-Hotspot #
 
+## ARCHIVED. Eye-Fi Cards are no longer sold and barely in use anymore. ##
+
 ## Description ##
 
 Set of scripts to enable use of eye-fi card for astro-photography on linux. Refer to README for a thorough project description.
